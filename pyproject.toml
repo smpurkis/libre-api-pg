@@ -1,24 +1,31 @@
-[tool.poetry]
+[project]
 name = "libre-api-pg"
 version = "0.1.0"
-description = ""
-authors = ["Sam Purkis <sam.purkis@zimmerbiomet.com>"]
+description = "Add your description here"
+authors = [
+    { name = "Sam Purkis", email = "sam.purkis@hotmail.co.uk" }
+]
+dependencies = [
+    "surrealdb>=0.3.2",
+    "libre-linkup-py>=0.2.0",
+    "python-dotenv>=1.0.1",
+]
 readme = "README.md"
-packages = [{ include = "libre_api_pg" }]
+requires-python = ">= 3.8"
 
-[tool.poetry.dependencies]
-python = ">=3.8,<3.9.7 || >3.9.7,<4.0"
-requests = "^2.31.0"
-pandas = "^2.0.2"
-python-dotenv = "^1.0.0"
-jupyter = "^1.0.0"
-polars = "^0.18.4"
-matplotlib = "^3.7.1"
-plotly = "^5.15.0"
-streamlit = "^1.25.0"
-arrow = "^1.2.3"
-
+[project.scripts]
+"libre-api-pg" = "libre_api_pg:main"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/libre_api_pg"]
