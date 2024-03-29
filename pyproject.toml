@@ -2,13 +2,11 @@
 name = "libre-api-pg"
 version = "0.1.0"
 description = "Add your description here"
-authors = [
-    { name = "Sam Purkis", email = "sam.purkis@hotmail.co.uk" }
-]
+authors = [{ name = "Sam Purkis", email = "sam.purkis@hotmail.co.uk" }]
 dependencies = [
     "surrealdb>=0.3.2",
-    "libre-linkup-py>=0.2.0",
     "python-dotenv>=1.0.1",
+    "requests>=2.31.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

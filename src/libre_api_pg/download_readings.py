@@ -12,7 +12,7 @@ load_dotenv()
 
 
 async def make_db_connection() -> Surreal:
-    db = Surreal(url=f"wss://{os.environ['DB_URL']}/rpc")
+    db = Surreal(url=f"ws://{os.environ['DB_URL']}/rpc")
     await db.connect()
     await db.signin(
         {
